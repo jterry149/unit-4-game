@@ -1,4 +1,4 @@
-/*========= main body css ========================*/
+/*========= Main Body CSS ========================*/
 /*========= Set up Background for page ===========*/
 body{
     background-image: url("../images/starswars_background.jpg");
@@ -7,9 +7,10 @@ body{
     color: #ffffff;
 	font-family: Tahoma, Geneva, sans-serif;
 }
-/*---------------------*/
+
+/*=====================*/
 /*   Jedi rendering    */
-/*---------------------*/
+/*=====================*/
 .character {
     width: 153px;
     margin: 0px 40px 0px 40px;

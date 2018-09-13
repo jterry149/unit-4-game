@@ -1,100 +1,135 @@
 
-$(document).ready(function() {
+$(document).ready(function() 
+{
 
-    //audio clips for the game play
-   /*  var audio = new Audio('assets/audio/imperial_march.mp3');
-    var force = new Audio('assets/audio/force.mp3');
-    var blaster = new Audio('assets/audio/blaster-firing.mp3');
-    var jediKnow = new Audio('assets/audio/jedi-know.mp3');
-    var lightsaber = new Audio('assets/audio/light-saber-on.mp3');
-    var rtwoo = new Audio('assets/audio/R2D2.mp3'); */
-    
-    //Array of playable jedi characters
+//audio clip for the game play
+    var lightsaber = new Audio('assets/audio/Lightsaber Clash-SoundBible.com-203518049.mp3');
+
+//Array of playable jedi character objects
     var jediCharacters = {
         'yoda': {
             name: 'yoda',
-            health: 160,
-            attack: 8,
+            health: 200,
+            attack: 15,
             imageUrl: "assets/images/yoda.png",
-            enemyAttackBack: 15
+            enemyAttackBack: 8
         }, 
         'luke': {
             name: 'luke',
-            health: 100,
+            health: 180,
             attack: 14,
             imageUrl: "assets/images/luke.png",
             enemyAttackBack: 5
         }, 
         'obi': {
             name: 'obi',
-            health: 150,
+            health: 170,
             attack: 8,
             imageUrl: "assets/images/obi.png",
             enemyAttackBack: 20
         }, 
         'rey': {
             name: 'rey',
-            health: 180,
+            health: 160,
             attack: 7,
             imageUrl: "assets/images/rey.png",
             enemyAttackBack: 20
         }
     };
 
-// Array of playable dark jedi characters
-
+// Array of playable sith character objects
+    var sithCharacters = {
+        'darth vader': {
+            name: 'darth vader',
+            health: 160,
+            attack: 8,
+            imageUrl: "assets/images/darth_vadar.png",
+            enemyAttackBack: 15
+        }, 
+        'darth maul': {
+            name: 'darth maul',
+            health: 100,
+            attack: 14,
+            imageUrl: "assets/images/darth_maul.png",
+            enemyAttackBack: 5
+        }, 
+        'kylo ren': {
+            name: 'kylo ren',
+            health: 150,
+            attack: 8,
+            imageUrl: "assets/images/kylo.png",
+            enemyAttackBack: 20
+        }, 
+        'darth sidious': {
+            name: 'darth sidous',
+            health: 180,
+            attack: 7,
+            imageUrl: "assets/images/darth_sidious.png",
+            enemyAttackBack: 20
+        }
+    };
 // global game play variables
-var currSelectedCharacter;
-var currDefender;
-var combatants = [];
-var indexofSelChar;
-var attackResult;
-var turnCounter = 1;
-var killCount = 0;
+    var currSelectedCharacter;
+    var currDefender;
+    var combatants = [];
+    var indexofSelChar;
+    var attackResult;
+    var turnCounter = 1;
+    var killCount = 0;
 
-
-var renderOne = function(jediCharacter, renderArea, makeChar) {
+// function to render the Jedi Characters
+    var renderJediCharacter = function(jediCharacter, renderArea, makeChar) 
+    {
     //character: obj, renderArea: class/id, makeChar: string
-    var charDiv = $("<div class='character' data-name='" + jediCharacter.name + "'>");
-    var charName = $("<div class='character-name'>").text(jediCharacter.name);
-    var charImage = $("<img alt='image' class='character-image'>").attr("src", jediCharacter.imageUrl);
-    var charHealth = $("<div class='character-health'>").text(jediCharacter.health);
-    charDiv.append(charName).append(charImage).append(charHealth);
-    $(renderArea).append(charDiv);
+        var charDiv = $("<div class='character' data-name='" + jediCharacter.name + "'>");
+        var charName = $("<div class='character-name'>").text(jediCharacter.name);
+        var charImage = $("<img alt='image' class='character-image'>").attr("src", jediCharacter.imageUrl);
+        var charHealth = $("<div class='character-health'>").text(jediCharacter.health);
+        charDiv.append(charName).append(charImage).append(charHealth);
+        $(renderArea).append(charDiv);
     //Capitalizes the first letter in characters name
     // $('.character').css('textTransform', 'capitalize');
     // conditional render
-    if (makeChar == 'enemy') {
-      $(charDiv).addClass('enemy');
-    } else if (makeChar == 'defender') {
-      currDefender = jediCharacter;
-      $(charDiv).addClass('target-enemy');
-    }
-  };
-
-  // Create function to render game message to DOM
-  var renderMessage = function(message) {
-    var gameMesageSet = $("#gameMessage");
-    var newMessage = $("<div>").text(message);
-    gameMesageSet.append(newMessage);
-
-    if (message == 'clearMessage') {
-      gameMesageSet.text('');
-    }
-  };
-
-  var renderJedi = function(charObj, areaRender) 
-  {
-    //render all characters
-    if (areaRender == '#jedi-characters-section') 
-    {
-      $(areaRender).empty();
-      for (var key in charObj) {
-        if (charObj.hasOwnProperty(key)) {
-          renderOne(charObj[key], areaRender, '');
+        if (makeChar == 'enemy') 
+        {
+            $(charDiv).addClass('enemy');
+        } 
+        else if (makeChar == 'defender') 
+        {
+            currDefender = jediCharacter;
+             $(charDiv).addClass('target-enemy');
         }
-      }
-    }
+    };
+
+// function to render game message for the user into the DOM
+    var renderMessage = function(message) 
+    {
+    //set up the message to display for the users
+        var gameMesageSet = $("#gameMessage");
+        var newMessage = $("<div>").text(message);
+        gameMesageSet.append(newMessage);
+    
+    // condiional statement to clear the message block area
+        if (message == 'clearMessage') 
+        {
+            gameMesageSet.text('');
+        }
+    };
+/////////////// --------WORKING ON THIS PART OF THE CODE
+    var renderCharacters = function(charObj, areaRender) 
+    {
+        //render all jedi characters
+        if (areaRender == '#jedi-characters-section') 
+        {
+            $(areaRender).empty();
+            for (var key in charObj) 
+            {
+                if (charObj.hasOwnProperty(key)) 
+                {
+                    renderJediCharacter(charObj[key], areaRender, '');
+                }
+            }
+        }
     //render player character
     if (areaRender == '#selected-character') {
       $('#selected-character').prepend("Your Character");       
