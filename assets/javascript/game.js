@@ -71,7 +71,7 @@ $(document).ready(function()
     var currentDefender;       // current defender
     var battleOpponents = [];  // array to hold other battle opponents
     var turnCounter = 1;       // turn counter for each attack
-    var killCounter = 0;       // keep count of opponents deaths
+    var deathCounter = 0;       // keep count of opponents deaths
 
 // function to render the characters
 var renderEveryCharacter = function(characters, renderArea, makeCharacter) 
@@ -248,8 +248,8 @@ $("#attack-button").on("click", function()
         else 
         {
             renderStarWarsChar(currentDefender, 'enemyDefeated');
-            killCounter++;
-            if (killCounter >= 7) 
+            deathCounter++;
+            if (deathCounter >= 7) 
             {
                 renderMessage("clearMessage");
                 restartGame("You Won!!!! GAME OVER!!!");
