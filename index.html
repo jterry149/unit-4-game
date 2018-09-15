@@ -9,50 +9,56 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <!--=============== Bootstrap Stylesheet link ==================-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!--=============== My Game Stylesheet =========================-->
+<!--===================== My Game Stylesheet ================================-->
     <link rel="stylesheet" href="assets/css/style.css">
-<!--=============== My Game Script =============================-->
-  <!--===================== JQuery Script Link ================================-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-  <!--========= Latest compiled and minified JavaScript for bootstrap =========-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="assets/javascript/game.js" type="text/javascript"></script> 
 </head>
-<!--=============== Main Body Content ==========================-->
+<!--===================== Main Body Content =================================-->
 <body>
-       
-  <header>
-      <h1 class="col-lg-12 text-center">Star Wars RPG Game</h1>
-  </header>
-  <div class="container" id="main-game-section">
-    <div class="row">
-        <div class="container col-sm-4" id="jedi-characters-section">
-        <div class="container section-title">Select Your Jedi</div>
-        <div class="container col-sm-4" id="sith-characters-section">
-        <div class="container section-title">Select Your Sith</div>
-    </div>
-    </div>
-    <div class="container col-lg-4" id="selected-jedi-section">
-      <div class="section-title container"></div>
-      <div id="selected-character"></div>
-    </div>
-     <div class="section-title container col-lg-4">Fight Section
-    	<div id="fight-section">
-      		<button class="btn" id="attack-button">Attack</button>
-      		<div class="jumbotron" id="gameMessage"></div>
-    	</div>   
-    </div>	
-    <div id="action">
-      <div class="character-section">
-        <div class="container section-title col-lg-3">
-        	<div id="defender"></div>
-        </div>	
-      </div>
-    </div>    
-    <div class="container" id="available-to-attack-section">
-      <div class="section-title"></div>
-    </div>
-  </div>
+<!--===================== Header ============================================-->      
+<header>
+    <h1 class="col-lg-12 text-center">Star Wars RPG Game</h1>
+</header>
+<!--=================== Main Game Section ===================================-->
+<div class="container" id="main-game-section">
+
+        <!--============= Characters Section ================-->
+        <div class="container col-lg-12" id="characters-section">
+            <div class="container section-title">Select Your Character</div>
+        </div>
+
+        <!--============= Selected Character Section ========-->
+        <div class="container col-lg-4" id="selected-character-section">
+            <div class="section-title container"></div>
+            <div id="selected-character"></div>
+        </div>
+
+        <!--============= Fighting Area Section =============-->
+        <div class="section-title container col-lg-4">Fight Section
+    	    <div id="fight-section">
+      		    <button class="btn" id="attack-button">Attack</button>
+      		    <div class="jumbotron" id="gameMessage"></div>
+    	    </div>   
+        </div>
+        
+        <!--============= Selected Defender Section ========-->
+        <div id="action">
+            <div class="character-section">
+                <div class="container section-title col-lg-4">
+        	        <div id="defender"></div>
+                </div>	
+            </div>
+        </div>  
+        <!--============ Next opponents to Attack ===========-->  
+        <div class="container" id="available-to-attack-section">
+            <div class="section-title"></div>
+        </div>
+</div>
+<!--============================= JQuery Script Link ==================================-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<!--======= Latest compiled and minified JavaScript for bootstrap =====================-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--========================= My JavaScript Page ======================================-->
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
-<!--========== End of Main Body Section ========================================-->
+<!--================= End of Main Body Section ========================================-->
 </html>

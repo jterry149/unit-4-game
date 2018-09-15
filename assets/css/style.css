@@ -8,31 +8,118 @@ body{
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
-/*=====================*/
-/*   Jedi rendering    */
-/*=====================*/
-.character {
-    width: 153px;
+/*=========== Message Properties ===========================================*/
+.jumbotron 
+{
+    background: white;
+    color: red;
+}
+
+/*=========== Character rendering Properties ================================*/
+.character 
+{
+    width: 150px;
     margin: 0px 40px 0px 40px;
     cursor: pointer;
     display: inline-block;
-  }
-  .character img {
+}
+.character img 
+{
     border: 3px solid #ffffff;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 100px;
     height: 100px;
-  }
-  .character-name {
+}
+.character-name 
+{
     text-align: center;
     text-transform: capitalize;
     line-height: 30px;
     font-family: 'Itim', cursive;
     font-size: 20px;
-  }
-  .character-health {
+}
+.character-health 
+{
     text-align: center;
-  }
+}
+
+
+/*============ Fighting Properties Section ================*/
+.attack 
+{
+    text-align: center;
+}
+.action 
+{
+    margin: 15px 0px;
+}
+#attack-button
+{
+    visibility: hidden;
+}
+.btn 
+{
+    background: red;
+    color: white;	
+}
+.enemy 
+{
+    width: 150px;
+    margin: 5px;
+    border: 3px solid black;
+    cursor: pointer;
+    display: block;
+    background-color: red;
+    float: left;
+}
+#attacker 
+{
+    padding: 5px;
+}
+.target-enemy 
+{
+    background-color: black;
+    color: white;
+}
+  
+/*========== Available Opponents Properties =============*/
+#available-to-attack-section 
+{
+    float: right;
+}
+#available-to-attack-section img 
+{
+    height: 100px;
+}
+/*====================== Defender Properties ===============*/
+#defender-name 
+{
+    text-align: center;
+}
+#defender-image 
+{
+    padding: 0px 16px;
+    margin: 3px 0px;
+}
+ #defender-health 
+{
+    text-align: center;
+}
+  
+
+/*========= Media Queries Properties =================================*/
+@media only screen and (max-device-width: 768px) 
+{
+.character 
+{
+    display: block;
+    height: 150px;    
+}
+#gameMessage 
+{
+    font-size: 12px;
+}
+}
   
