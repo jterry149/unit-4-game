@@ -1,12 +1,15 @@
 /*========= Main Body CSS ========================*/
 /*========= Set up Background for page ===========*/
-body{
+body
+{
     background: url("../images/starswars_background.jpg") no-repeat center center fixed;
     background-size:cover;
+    fill-opacity: inherit;
     height: 100%;
     color: #ffffff;
 	font-family: Tahoma, Geneva, sans-serif;
 }
+
 
 /*=========== Message Properties ===========================================*/
 .jumbotron 
@@ -19,11 +22,11 @@ body{
 .character 
 {
     width: 150px;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 50px 0px 50px;
     cursor: pointer;
     display: inline-block;
 }
-.character img 
+.character-image 
 {
     border: 3px solid #ffffff;
     display: block;
