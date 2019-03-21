@@ -34,6 +34,13 @@ Step 6: You lose the game once your life meter goes to zero.
 
 Final Step: The game gives the option to restart another game no matter if you win or lose.
 
+## Future Features
+    * Jedi and Sith sides for chosing characters
+    * Other sound effects
+
+## Current Bugs
+    * Certain characters are too strong need to reduce for a more competive playing field.
+    * The attack can be hit after game over which disable restart button.
 
 ## Game Demo
 [Star Wars RPG Game Demo](https://jterry149.github.io/unit-4-game/)
